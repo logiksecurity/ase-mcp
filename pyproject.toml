@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ase-mcp"
+version = "1.0.0"
+description = "MCP server bridging an AI agent (VM or same machine) to a live Aseprite session on the host."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Logik Security" }]
+dependencies = [
+    "mcp>=1.2.0",
+    "websockets>=12.0",
+    "starlette>=0.37",
+]
+
+[project.scripts]
+ase-mcp = "server:main"
+
+[tool.setuptools]
+py-modules = ["server"]

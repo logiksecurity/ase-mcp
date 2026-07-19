@@ -1,0 +1,11 @@
+{
+    "mcpServers":
+    {
+        "ase-mcp":
+        {
+            "type": "http",
+            "url": "http://HOST_LAN_IP:8001/mcp",
+            "headers": { "Authorization": "Bearer PASTE_TOKEN_HERE" }
+        }
+    }
+}
