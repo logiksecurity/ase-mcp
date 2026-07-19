@@ -125,4 +125,4 @@ other Aseprite versions, open an issue if you hit one.
 
 ## License
 
- Apache-2.0. See \LICENSE`.`
+ Apache-2.0. See LICENSE`.`
