@@ -34,13 +34,13 @@ Agent side (any MCP client; the auth token is required even on the same machine)
 - VM: run `scripts/ase-mcp-setup.ps1` as admin on the HOST. It does the whole
   wiring (portproxy, scoped firewall, token generation) and writes a ready-to-use
   `.mcp.json` at the repo root. Details in `INSTALL.md`.
-- Same machine: copy `.mcp.json.example`, set the url host to `127.0.0.1` and paste
+- Same machine: copy `.mcp.json.example`, set the URL host to `127.0.0.1` and paste
   the token from `%APPDATA%/ase-mcp/token` (generated at first server start).
 
 ## Architecture
 
 ```
-MCP agent (VM)   --HTTP :8001-->  ase-mcp server (HOST)  --WS :8767-->  Aseprite plugin (HOST)
+MCP agent (VM)   --HTTP:8001-->  ase-mcp server (HOST)  --WS :8767-->  Aseprite plugin (HOST)
                   (portproxy)      launched by the plugin                dials OUT (WS client)
 ```
 
@@ -92,7 +92,7 @@ so the canvas repaints immediately (no need to move the mouse over Aseprite).
 - Debug: `enable_debug_log()` / `disable_debug_log()`.
 
 Save and export paths are gated by `ASE_OUTPUT_ROOT` (see SECURITY.md B-2):
-the extension must match the tool, and when the variable is set the resolved path
+the extension must match the tool, and when the variable is set, the resolved path
 must stay inside that root.
 
 ## Debug log
@@ -121,8 +121,8 @@ portproxy and firewall. The full threat model and a per-finding audit are in
 Working, tested end to end: an AI agent running in a VM drives a live Aseprite
 session on the Windows host, generating and animating a full scene (see the
 video above). Targets Aseprite 1.3+; some Lua calls may need minor tweaks on
-other Aseprite versions, open an issue if you hit one.
+other Aseprite versions; open an issue if you hit one.
 
 ## License
 
- Apache-2.0. See LICENSE`.`
+Apache-2.0. See `LICENSE`.
