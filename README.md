@@ -8,7 +8,7 @@ agent running in a VM or on the same machine.
 ![Aseprite 1.3+](https://img.shields.io/badge/Aseprite-1.3%2B-7d5fff.svg)
 ![Windows host](https://img.shields.io/badge/host-Windows-0078d6.svg)
 
-<!-- Demo video: open this README in the GitHub web editor and drag the .mp4 here to embed it. -->
+https://github.com/user-attachments/assets/f8e563fb-5719-4ed4-853f-e88546b9fa43
 
 > One prompt builds a full scene, house, garden, and a 12-frame baby walk-cycle,
 > live in Aseprite, in a single Lua transaction. Not a flattened PNG: a real
