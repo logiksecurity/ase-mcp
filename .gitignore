@@ -1,0 +1,25 @@
+# SEC (SECURITY.md B-1): the agent config carries the ase-mcp bearer token, which
+# is a host-RCE credential (run_lua executes arbitrary Lua with os.execute in the
+# Aseprite plugin environment). NEVER commit it. .mcp.json.example is the template.
+.mcp.json
+
+# Build artifacts. The bundled server binary and the packaged extension are NOT
+# tracked (SECURITY.md A-8: installing them = trusting them). Build from source
+# with build_exe.bat / build_package.py; verify against the SHA256 in SECURITY.md.
+*.exe
+*.aseprite-extension
+dist/
+build/
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+
+# local runtime
+*.log
+
+# local working files (demo assets, agent graph caches, scratch prompts)
+assets/
+graphify-out/
+prompt-test.txt
