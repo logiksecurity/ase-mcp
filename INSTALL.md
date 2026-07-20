@@ -10,6 +10,9 @@ Two machines are involved:
 - HOST: runs Aseprite + the ase-mcp server + the plugin. Windows.
 - VM: runs the MCP agent (e.g. Claude Code). Only needs one line in mcp.json.
 
+Same machine (agent and Aseprite on one box) also works: see the `-Local`
+shortcut in A3, which skips the portproxy and firewall parts.
+
 ---
 
 ## Part A - HOST setup
@@ -43,6 +46,12 @@ It auto-detects your LAN IP and asks for the allowed source. Enter the **VM's IP
 HostIP - note that IP for Part B.
 
 To undo later: `.\scripts\ase-mcp-remove.ps1` (as Administrator).
+
+**Same machine (no VM):** run it WITHOUT admin as
+`.\scripts\ase-mcp-setup.ps1 -Local`. It skips the portproxy and firewall entirely
+(nothing external reaches the port), generates the token, and writes a `.mcp.json`
+pointing at `127.0.0.1:8001`. No LAN IP or firewall-scope prompts in this mode, and
+Part B does not apply, only restart the agent.
 
 ### A4. Install the Aseprite plugin
 
@@ -152,7 +161,7 @@ The PNG lands in the shared folder, readable from the VM.
 | `build_exe.bat` | build machine | rebuild the exe (needs Python + pyinstaller) |
 | `ase-mcp-bridge.aseprite-extension` | HOST (in Aseprite) | the plugin (install this) |
 | `aseprite-plugin/` | HOST (in Aseprite) | plugin source (package.json + ase_bridge.lua) |
-| `scripts/ase-mcp-setup.ps1` | HOST (admin) | portproxy + firewall |
+| `scripts/ase-mcp-setup.ps1` | HOST | portproxy + firewall + token (VM, admin); `-Local` = token + 127.0.0.1 mcp.json, no admin |
 | `scripts/ase-mcp-remove.ps1` | HOST (admin) | tear down portproxy + firewall |
 | `scripts/ase-mcp-status.ps1` | HOST (admin) | show portproxy + firewall + ports |
 | `scripts/ase-mcp-test.ps1` | HOST | live check: server up + plugin connected |

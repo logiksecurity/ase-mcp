@@ -8,7 +8,7 @@ agent running in a VM or on the same machine.
 ![Aseprite 1.3+](https://img.shields.io/badge/Aseprite-1.3%2B-7d5fff.svg)
 ![Windows host](https://img.shields.io/badge/host-Windows-0078d6.svg)
 
-https://github.com/user-attachments/assets/f8e563fb-5719-4ed4-853f-e88546b9fa43
+<!-- Demo video: open this README in the GitHub web editor and drag the .mp4 here to embed it. -->
 
 > One prompt builds a full scene, house, garden, and a 12-frame baby walk-cycle,
 > live in Aseprite, in a single Lua transaction. Not a flattened PNG: a real
@@ -34,8 +34,13 @@ Agent side (any MCP client; the auth token is required even on the same machine)
 - VM: run `scripts/ase-mcp-setup.ps1` as admin on the HOST. It does the whole
   wiring (portproxy, scoped firewall, token generation) and writes a ready-to-use
   `.mcp.json` at the repo root. Details in `INSTALL.md`.
+<<<<<<< HEAD
 - Same machine: copy `.mcp.json.example`, set the URL host to `127.0.0.1` and paste
   the token from `%APPDATA%/ase-mcp/token` (generated at first server start).
+=======
+- Same machine: run `scripts/ase-mcp-setup.ps1 -Local` (no admin). It skips the
+  portproxy and firewall, generates the token, and writes `.mcp.json` at `127.0.0.1`.
+>>>>>>> be27abb (Add -Local same-machine mode to setup script (no admin, no portproxy/firewall))
 
 ## Architecture
 
@@ -118,7 +123,7 @@ portproxy and firewall. The full threat model and a per-finding audit are in
 
 ## Status
 
-Working, tested end to end: an AI agent running in a VM drives a live Aseprite
+Working, tested end to end in a VM and on the same machine (`-Local`): an agent drives a live Aseprite
 session on the Windows host, generating and animating a full scene (see the
 video above). Targets Aseprite 1.3+; some Lua calls may need minor tweaks on
 other Aseprite versions; open an issue if you hit one.
