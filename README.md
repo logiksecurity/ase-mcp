@@ -40,7 +40,7 @@ Agent side (any MCP client; the auth token is required even on the same machine)
 =======
 - Same machine: run `scripts/ase-mcp-setup.ps1 -Local` (no admin). It skips the
   portproxy and firewall, generates the token, and writes `.mcp.json` at `127.0.0.1`.
->>>>>>> be27abb (Add -Local same-machine mode to setup script (no admin, no portproxy/firewall))
+
 
 ## Architecture
 
