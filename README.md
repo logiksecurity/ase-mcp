@@ -8,7 +8,7 @@ agent running in a VM or on the same machine.
 ![Aseprite 1.3+](https://img.shields.io/badge/Aseprite-1.3%2B-7d5fff.svg)
 ![Windows host](https://img.shields.io/badge/host-Windows-0078d6.svg)
 
-<!-- Demo video: open this README in the GitHub web editor and drag the .mp4 here to embed it. -->
+https://github.com/user-attachments/assets/1ed1c882-1fee-4d09-974f-673eb77eb70a
 
 > One prompt builds a full scene, house, garden, and a 12-frame baby walk-cycle,
 > live in Aseprite, in a single Lua transaction. Not a flattened PNG: a real
@@ -27,7 +27,7 @@ AND the server).
 2. The first time, Aseprite asks permission to run a command / use the network ->
    Allow (or grant full trust in `Edit > Preferences > Scripts`).
 
-That's it. On load the plugin launches the bundled server and connects; every later
+That's it. On load, the plugin launches the bundled server and connects; every later
 Aseprite start is automatic.
 
 Agent side (any MCP client; the auth token is required even on the same machine):
