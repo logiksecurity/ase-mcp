@@ -34,10 +34,10 @@ Agent side (any MCP client; the auth token is required even on the same machine)
 - VM: run `scripts/ase-mcp-setup.ps1` as admin on the HOST. It does the whole
   wiring (portproxy, scoped firewall, token generation) and writes a ready-to-use
   `.mcp.json` at the repo root. Details in `INSTALL.md`.
-<<<<<<< HEAD
+
 - Same machine: copy `.mcp.json.example`, set the URL host to `127.0.0.1` and paste
   the token from `%APPDATA%/ase-mcp/token` (generated at first server start).
-=======
+
 - Same machine: run `scripts/ase-mcp-setup.ps1 -Local` (no admin). It skips the
   portproxy and firewall, generates the token, and writes `.mcp.json` at `127.0.0.1`.
 
